@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex14</title>
+</head>
+<body>
+   <button onclick="sortear()">Sortear fase da Lua</button>
+   <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+   function sortear(){
+      let n = Math.random();
+      let intervalo = 31 - 1;
+      let formatado = (intervalo * n).toFixed()
+      let dia = formatado
+
+      if(dia >= 1 && dia <= 7){
+         div_mensagem.innerHTML = `Lua Nova<br>
+         <img style="width: 100px; height: 100px;" src="https://content-media.astrologialuzesombra.com.br/wp-content/uploads/2022/08/lua-nova-na-astrologia..jpg" alt="Lua Nova">`
+      }
+      else if(dia >= 8 && dia <= 16){
+         div_mensagem.innerHTML = `Lua Cheia<br>
+         <img style="width: 100px; height: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-EeD12yjT1zzLZ0nycdU5xuoiAsQiQmXz1Q&s" alt="Lua Cheia">`
+      }
+      else if(dia >= 17 && dia <= 22){
+         div_mensagem.innerHTML = `Lua Minguante<br>
+         <img style="width: 100px; height: 100px;" src="https://super.abril.com.br/wp-content/uploads/2020/09/rochas-da-lua_site.jpg?crop=1&resize=1212,909" alt="Lua Minguante">`
+      }
+      else{
+         div_mensagem.innerHTML = `Lua Crescente<br>
+         <img style="width: 100px; height: 100px;" src="https://s.calendarr.com/upload/articles/sh/ut/shutterstock-1075552298-ogimage-crescente_c.jpg?" alt="Lua Crescente">`
+      }
+   }
+</script>

@@ -30,15 +30,19 @@
         let numAleatorio = Math.random();
         let intervalo = 3 - 1;// maximo - minimo
         let valorFormatado = (numAleatorio * intervalo + 1).toFixed(0);
+        let foto = ''
 
         if(valorFormatado == 1){
             adversario = 'Pedra'
+            foto = `<img style="width: 100px; height: 100px;" src="https://images.tcdn.com.br/img/img_prod/665026/pedra_sabao_talco_8_x_16_cm_4_041_kg_5140_1_fe5a14b7a9436150f78ebf9bbb8473fe.jpg" alt="Pedra">`
         }
         else if(valorFormatado == 2){
             adversario = 'Papel'
+            foto = `<img style="width: 100px; height: 100px;" src="https://18854.cdn.simplo7.net/static/18854/sku/papeis-pepel-laminado-artesanato-masterprint--p-1743784371342.jpg" alt="Papel">`
         }
         else if(valorFormatado == 3){
             adversario = 'Tesoura'
+            foto = `<img style="width: 100px; height: 100px;" src="https://andrearmarinhos.com.br/wp-content/uploads/2021/11/Tesoura-de-Uso-Geral-8-pol-20-cm-508B-Western-01.jpg" alt="Tesoura">`
         };
 
         if(escolha == 'Papel' && adversario == 'Pedra' || escolha == 'Tesoura' && adversario == 'Papel' || escolha == 'Pedra' && adversario == 'Tesoura'){
@@ -53,7 +57,8 @@
             resultado = `Empate`
         };
         
-        div_mensagem.innerHTML += `<br><br>${resultado}<br> 
+        div_mensagem.innerHTML += `<br><br>${foto}<br> 
+        ${resultado}<br>
         Jogador 1: ${pontosP1} vitória(s)<br>
         Jogador 2: ${pontosP2} vitória(s) `
         

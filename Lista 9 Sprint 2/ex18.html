@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex18</title>
+</head>
+<body>
+   <button onclick="sortear()">Jogar</button>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+   let j1 = 0;
+   let j2 = 0;
+   let empate = 0;
+
+   function sortear(){
+      let n1 = Math.random();
+      let n2 = Math.random();
+      let intervalo = 6 - 1;
+      let dado1 = (n1 * intervalo).toFixed()
+      let dado2 = (n2 * intervalo).toFixed()
+
+      if(dado1 > dado2){
+         j1++
+      }
+      else if(dado2 > dado1){
+         j2++
+      }
+      else if(dado1 == dado2){
+         empate++
+      }
+      div_mensagem.innerHTML = `<br><br>
+      Jogador 1: ${j1} <br>  
+      Jogador 2: ${j2}<br>  
+      Empate: ${empate} `
+   }
+</script>

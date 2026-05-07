@@ -21,19 +21,19 @@
         let imagem = ``
 
         if(nota >= 0 && nota <= 0.5){
-            imagem = `<img src="" alt="Muito triste">`
+            imagem = `<img style="width: 100px; height: 100px;" src="https://assets.puzzlefactory.com/puzzle/342/322/original.jpg" alt="Muito triste">`
         }
         else if(nota > 0.5 && nota <= 1.5){
-            imagem = `<img src="" alt="Meio triste">`
+            imagem = `<img style="width: 100px; height: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2aM3pt3d_9ZSWcO9bqk0zOFk6i-OKvnz60Q&s.jpg" alt="Meio triste">`
         }
         else if(nota > 1.5 && nota <= 3.5){
-            imagem = `<img src="" alt="Neutro">`
+            imagem = `<img style="width: 100px; height: 100px;" src="https://www.hedera.com.br/wp-content/uploads/2019/12/sh-1l-neutro.png" alt="Neutro">`
         }
         else if(nota > 3.5 && nota <= 4.5){
-            imagem = `<img src="" alt="Feliz">`
+            imagem = `<img style="width: 100px; height: 100px;" src="https://st.depositphotos.com/1001911/55508/v/450/depositphotos_555089554-stock-illustration-happy-emoji-emoticon-showing-double.jpg" alt="Feliz">`
         }
         else{
-            imagem = `<img src="" alt="Muito Feliz">`
+            imagem = `<img style="width: 100px; height: 100px;" src="https://media.tenor.com/4ixzAe2rXZUAAAAe/feliz-muito-feliz-jhonny-drumond-jhonnydrumond-dancinha.png" alt="Muito Feliz">`
         };
 
         div_mensagem.innerHTML = `Nota recebida:${formatado}<br ]> ${imagem}`;
