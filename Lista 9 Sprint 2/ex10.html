@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+<body>
+    <button onclick="dado1()">Dado Jogador N1</button>
+    <button onclick="dado2()">Dado Jogador N2</button>
+    <button onclick="comparar()">Comparar Resultados</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let r1 = ''
+    let r2 = ''
+
+
+    function dado1(){
+        let n = Math.random();
+        let intervalo = 6 - 1;
+        let formatado = (n * intervalo + 1).toFixed(0);
+
+        r1 = formatado
+    }
+
+    function dado2(){
+        let n = Math.random();
+        let intervalo = 6 - 1;
+        let formatado = (n * intervalo + 1).toFixed(0);
+
+        r2 = formatado
+    }
+
+    function comparar(){
+        if(r1 > r2){
+            div_mensagem.innerHTML = `JOGADOR N1 VENCEU`
+        }
+        else if(r2 > r1){
+            div_mensagem.innerHTML = `JOGADOR N2 VENCEU`
+        }
+        else if(r2 == r1){
+            div_mensagem.innerHTML = `EMPATE`
+        }
+        
+    }
+</script>

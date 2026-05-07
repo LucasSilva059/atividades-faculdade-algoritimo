@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>exercicio 1</title>
+</head>
+<body>
+   <button onclick="but_pag50()">Pagar 50</button>
+   <button onclick="but_rec100()">Receber 100</button> <br><br>
+
+   <div id="mensagem"></div>
+
+   <script>
+
+      let saldoAtual = 0
+
+
+      function but_pag50() {
+         saldoAtual -= 50;
+
+         mensagem.innerHTML = `Pagamento de R$50 efetuado! <br> <br>
+         Saldo atual: ${saldoAtual}` 
+      };
+
+      function but_rec100(){
+         saldoAtual += 100
+      
+         mensagem.innerHTML = `Transferência de R$100 recebida! <br> <br>
+         Saldo atual igual a: ${saldoAtual}`
+      }
+   </script>
+</body>
+</html>

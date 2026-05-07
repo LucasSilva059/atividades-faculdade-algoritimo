@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex2</title>
+</head>
+<body>
+   Quantos anos você tem? <input type="text" id="inp_idade"> <br> <br>
+
+   <button onclick="aposHomem()"> Aposentadoria Homem </button>
+   <button onclick="aposMulher()">Aposentadoria Mulher </button> <br> <br>
+   <div id="mensagem"></div> 
+   
+</body>
+<script>
+   function aposHomem(){
+      let idade = Number(inp_idade.value);
+      let aposentadoria =  70 - idade
+      mensagem.innerHTML = 'Ainda falta ' + aposentadoria + ' anos para você se aposentar.'
+   }
+   function aposMulher(){
+      let idade = Number(inp_idade.value);
+      let aposentadoria =  60 - idade
+      mensagem.innerHTML = 'Ainda falta ' + aposentadoria + ' anos para você se aposentar.'
+   }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex8</title>
+</head>
+<body>
+   Qual é o saldo da sua conta? <input type="text" id="inp_saldo">
+   Quanto você quer tirar da conta? <input type="text" id="inp_retirar">
+
+   <button onclick="but_analisar()">Analisar conta</button>
+
+   <div id="mensagem"></div>
+
+
+
+</body>
+<script>
+   function but_analisar(){
+      let saldo = Number(inp_saldo.value);
+      let retirar = Number(inp_retirar.value);
+      let saldoNovo = saldo - retirar;
+
+      if(saldoNovo > 0){
+          mensagem.innerHTML = `O saldo atual da conta corrente é ${saldoNovo}`
+      } else {
+          mensagem.innerHTML = `<p style="color: red; font-weight: bold;">O saldo atual da conta corrente é ${saldoNovo}</p>`
+      };
+   };
+</script>
+</html>

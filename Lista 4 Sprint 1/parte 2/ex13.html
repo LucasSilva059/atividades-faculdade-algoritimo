@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex13</title>
+</head>
+<body>
+   Escolha um pokemon inicial da primeira geração: <br>
+   <select id="sel_pokemon">
+      <option selected disabled>Selecione um pokemon</option>
+      <option>Bulbassaur</option>
+      <option>Charmander</option>
+      <option>Squirtle</option>
+   </select>
+      
+      <button onclick="verificar()">Esolher Pokémon</button>
+
+      <div id="div_mensagem"></div>
+</body>
+<script>
+   function verificar(){
+      let pokemon = sel_pokemon.value
+
+      if(pokemon == 'Bulbassaur'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://http2.mlstatic.com/D_NQ_NP_842729-MLA105813972016_022026-O.webp" alt="Bulbassaur">`
+      }
+      else if(pokemon == 'Charmander'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://m.media-amazon.com/images/I/41PBNUeUNOL._AC_UF894,1000_QL80_.jpg" alt="Charmander">`
+      }
+      else if(pokemon == 'Squirtle'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://m.magazineluiza.com.br/a-static/420x420/squirtle-de-pelucia-20cm-bichinho-de-pelucia-de-pokemon/spacesoundsstore/16044769466/5a677fe0efc02279415216b34f38f50a.jpeg" alt="Squirtle">`
+      }
+   }
+</script>
+</html>

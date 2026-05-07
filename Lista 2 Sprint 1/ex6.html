@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex6</title>
+</head>
+<body>
+   Qual é seu nome? <input type="text" id="inp_nome"><br><br>
+   Quanto você tirou na atividade N°1? <input type="text" id="inp_atvd1"><br>
+   Quanto você tirou na atividade N°2? <input type="text" id="inp_atvd2"><br>
+   Quanto você tirou na atividade N°3? <input type="text" id="inp_atvd3"><br>
+
+   <button onclick="showNota()">Mostra Nota</button>
+
+   <div id="mensagem"></div>
+   <div id="msg2"></div>
+
+</body>
+<script>
+   function showNota(){
+      let nome = inp_nome.value
+      let atvd1 = Number(inp_atvd1.value)
+      let atvd2 = Number(inp_atvd2.value)
+      let atvd3 = Number(inp_atvd3.value)
+      let soma = (atvd1 + atvd2 + atvd3)
+      let media = soma / 3
+      
+      mensagem.innerHTML = `A soma das suas três atividades é: ${soma}`
+      msg2.innerHTML = `${nome}, a média das suas atividades é: ${media}`  
+   }
+</script>
+</html>

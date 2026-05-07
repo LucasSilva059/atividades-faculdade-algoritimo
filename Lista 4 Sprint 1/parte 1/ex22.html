@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>EX22</title>
+</head>
+<body>
+   Qual é a temperatura do ambiente? <input type="text" id="inp_tempAmbiente">
+
+   <button onclick="but_verificarClima()">Verificar Clima</button>
+
+   <div id="mensagem"></div>
+</body>
+<script>
+   function but_verificarClima(){
+      let temperatura = Number(inp_tempAmbiente.value);
+
+      if(temperatura < 10){
+         mensagem.innerHTML = `<br><img style="width: 50%;" id="desjoia" src="https://comprerural.com/wp-content/uploads/2017/12/carne-bovina-41.jpg" alt="Negativo">`
+         // imagem de alimento em bom estado
+      } else{
+          mensagem.innerHTML = `<br><img style="width: 30%;" id="desjoia" src="https://preview.redd.it/is-this-steak-bad-it-doesnt-smell-terrible-but-ever-ever-so-v0-rx8cpc7wckxd1.jpeg?auto=webp&s=0a198a1e3f30fdd20d98de2122056011f9eef178" alt="Negativo">`
+         // imagem de alimento estragado
+      }
+   }
+</script>
+</html>
+

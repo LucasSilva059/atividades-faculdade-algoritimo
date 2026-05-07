@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Desafio One Piece 2</title>
+</head>
+
+<body>
+   Cadastrar Estoque de Comidas: <input type="text" id="inp_comida"> 
+
+   <button onclick="cadastrar()">cadastrar</button>
+   <button onclick="verificar()">Verificar Quantidade</button> <br>
+
+   Pesquisar comida: <input type="text" id="inp_pesqComida">
+
+   <button onclick="pesquisar()">Pesquisar Comida</button> 
+   <button onclick="exibir()">Exibir Estoque</button>
+
+
+   
+   <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+   let listaComida = []
+
+   function cadastrar(){
+      let comida = inp_comida.value;
+      listaComida.push(comida);
+   }
+
+   function verificar(){
+      let mensagem = '';
+      
+      if(listaComida.length < 3){
+         mensagem = `Desse jeito, o Luffy devora até o navio`
+      }
+      else if(listaComida.length < 7){
+         mensagem = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
+      }
+      else if(listaComida.length <= 10){
+         mensagem = `Assim, talvez sobre um pouco para a tripulação`
+      }
+      else{
+         mensagem = `Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!`
+      }
+
+      div_mensagem.innerHTML = mensagem
+   }
+
+   function pesquisar(){
+      let pesqComida = inp_pesqComida.value;
+      let mensagem = ''
+      let contComida = 0
+
+      if(listaComida.includes(pesqComida)){
+         for(i=0; i < listaComida.length ;i++){
+            
+            if(listaComida[i] == pesqComida ){
+               contComida++
+            }
+         }
+          mensagem = `Temos a comida ${pesqComida} e há ${contComida} unidade(s) dela`
+      }
+      else{
+         mensagem = `Alguém vai ter que comprar ${pesqComida}, tá fazendo falta...`
+      }
+      div_mensagem.innerHTML = mensagem;
+   }
+
+   function exibir(){ // arrumar
+      let mensagem = ''
+      let qtdComida = 0
+      
+      for(let i=0; i < listaComida.length ;i++){
+
+         for(let j = i + 1; j < listaComida.length; j++ ){
+            if(j == i ){
+               qtdComida++
+
+               mensagem = `<br>- ${pesqComida} (${qtdComida})`
+            }
+
+         }
+
+
+         }
+
+         div_mensagem.innerHTML = mensagem
+   }
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex21</title>
+</head>
+<body>
+   Qual é a sua frequencia? <input type="text" id="inp_frequencia">
+
+   <button onclick="but_analisar()">Analisar Frequência</button>
+
+   <div id="mensagem"></div>
+</body>
+<script>
+   function but_analisar(){
+      let frequencia = Number(inp_frequencia.value);
+      
+      if(frequencia >= 50){
+         mensagem.innerHTML = `<br><img style="width: 50%;" id="desjoia" src="https://noticias.r7.com/resizer/v2/WSOMRSRNAVLNPCKOCVJCI4UP3Y.jpg?auth=7d0ffe30cd09eb66a9172ed2c61522cca75d1ac78de0799b8c2723e613875a3d" alt="Negativo">`
+         // IMAGEM ALUNO ESTUDIOSO
+      } else{
+         mensagem.innerHTML = `<br><img style="width: 40%;" id="desjoia" src="https://img.freepik.com/fotos-gratis/tourist-apresentando-algo_1368-7018.jpg?semt=ais_hybrid&w=740&q=80" alt="Negativo">`
+         // IMAGEM DE TURISTA
+      };
+   };
+</script>
+</html>

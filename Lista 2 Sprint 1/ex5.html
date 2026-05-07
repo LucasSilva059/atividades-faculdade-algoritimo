@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex5</title>
+</head>
+<body>
+   Quanto custa a passagem que você pega? <input type="text" id="inp_valor"><br><br>
+   Quantas viagens você faz por mês? <input type="text" id="inp_viagens"><br><br>
+
+   <button onclick="verEco()">Ver Economia</button>
+
+   <div id="mensagem"></div>
+</body>
+<script>
+   function verEco(){
+      let valor = Number(inp_valor.value)
+      let viagens = Number(inp_viagens.value)
+      let resultado = viagens * valor
+      mensagem.innerHTML = 'Você economizará R$'+ resultado + ' por mês'
+   };
+</script>
+</html>

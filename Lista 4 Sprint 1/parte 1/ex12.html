@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex12</title>
+</head>
+<body>
+   Qual é seu saldo na conta do banco? <input type="text" id="inp_saldo">
+
+   <button onclick="but_verificarFinancia()">Verificar Finanças</button>
+
+   <div id="mensagem"></div>
+
+</body>
+<script>
+   function but_verificarFinancia(){
+      let conta = Number(inp_saldo.value);
+      
+      if(conta !== 0){
+         if(conta>0){
+            mensagem.innerHTML = `Saldo positivo! :)`
+         } else{
+            mensagem.innerHTML = `<p style="color: red;"> Está devendo! </p>`
+         }
+      } else{
+         mensagem.innerHTML = `<p style="color: black;">Conta zerada</p>`
+      }
+   }
+</script>
+</html>

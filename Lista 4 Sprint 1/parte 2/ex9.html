@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+<body>
+    Seu peso: <input type="text" id="inp_peso">
+    Sua altura: <input type="text" id="inp_altura">
+
+    <button onclick="but_calcular()">Calcular IMC</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+<script>
+    function but_calcular(){
+        let peso = Number(inp_peso.value);
+        let altura = Number(inp_altura.value);
+        let imc = peso / (altura * altura);
+
+        if(imc < 18.5){
+            div_mensagem.innerHTML = `Abaixo do peso`
+        }
+        else if(imc < 25){
+            div_mensagem.innerHTML = `Peso normal`
+        }
+        else if(imc <= 29.9){
+            div_mensagem.innerHTML = `Acima do peso`
+        }
+        else{
+            div_mensagem.innerHTML = `Cuidado, risco de obesidade`
+        }
+    }
+</script>
+
+</html>

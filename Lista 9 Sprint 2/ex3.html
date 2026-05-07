@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex3</title>
+</head>
+<body>
+   <button onclick="sortear()">jogar dado</button>
+
+   <div id="div_mensagem" style="height: 100px; width: 100px; background-color: black; color: white; display: flex; justify-content: center; align-items: center;"></div>
+</body>
+</html>
+<script>
+   function sortear(){
+      let aleatorio = Math.random()
+      let formatado = (aleatorio * 19 + 1).toFixed();
+
+      div_mensagem.innerHTML = formatado;
+   }
+</script>

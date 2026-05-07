@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="jogar()">Jogar</button>
+
+    <select name="" id="sel_escolha">
+        <option>Pedra</option>
+        <option>Papel</option>
+        <option>Tesoura</option>
+    </select>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    let pontosP1 = 0;
+    let pontosP2 = 0;
+    let escolha = sel_escolha.value
+    let adversario = ''
+    let resultado = ''
+
+    function jogar(){
+        let numAleatorio = Math.random();
+        let intervalo = 3 - 1;// maximo - minimo
+        let valorFormatado = (numAleatorio * intervalo + 1).toFixed(0);
+
+        if(valorFormatado == 1){
+            adversario = 'Pedra'
+        }
+        else if(valorFormatado == 2){
+            adversario = 'Papel'
+        }
+        else if(valorFormatado == 3){
+            adversario = 'Tesoura'
+        };
+
+        if(escolha == 'Papel' && adversario == 'Pedra' || escolha == 'Tesoura' && adversario == 'Papel' || escolha == 'Pedra' && adversario == 'Tesoura'){
+            pontosP1 ++;
+            resultado = 'J1 venceu!';
+        }
+        else if (adversario == 'Pedra' && escolha == 'Tesoura' || adversario == 'Papel' && escolha == 'Pedra' || adversario == 'Tesoura' && escolha == 'Papel'){
+            pontosP2 ++;
+            resultado = 'J2 venceu!';
+        }
+        else if(adversario == escolha){
+            resultado = `Empate`
+        };
+        
+        div_mensagem.innerHTML += `<br><br>${resultado}<br> 
+        Jogador 1: ${pontosP1} vitória(s)<br>
+        Jogador 2: ${pontosP2} vitória(s) `
+        
+        if(pontosP1 == 10){
+            div_mensagem.innerHTML = ``
+            div_mensagem.innerHTML = `JOGADOR 1 VENCEU`
+            pontosP1 = 0;
+            pontosP2 = 0;
+        }
+        else if(pontosP2 == 10){
+            div_mensagem.innerHTML = ``
+            div_mensagem.innerHTML = `JOGADOR 2 VENCEU`
+            pontosP1 = 0;
+            pontosP2 = 0;
+        }
+    }
+
+</script>

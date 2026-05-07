@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex3</title>
+</head>
+<body>
+   Insira um número : <input type="text" id="inp_n1"> <br><br>
+   Insira outro Número : <input type="text" id="inp_n2"> <br><br>
+
+   <button onclick="quociente()">Quociente</button> 
+   <button onclick="resto()">Resto</button> <br><br>
+   <button onclick="completo()">Completo</button>
+
+   <div id="mensagem"></div>
+
+
+</body>
+<script>
+   function quociente(){
+      let n1 = Number(inp_n1.value)
+      let n2 = Number(inp_n2.value)
+      let resultado = n1 / n2
+      mensagem.innerHTML = 'A divisão de '+ n1 + ' por ' + n2 + ' é: ' + resultado
+   }
+   function resto(){
+      let n1 = Number(inp_n1.value)
+      let n2 = Number(inp_n2.value)
+      let resultado = n1 % n2
+      mensagem.innerHTML = 'O resto da divisão de '+ n1 + ' por ' + n2 + ' é: ' + resultado
+   }
+   function completo(){
+      let n1 = Number(inp_n1.value)
+      let n2 = Number(inp_n2.value)
+      let quociente = n1 / n2
+      let sobra = n1 % n2
+      mensagem.innerHTML = 'A divisão de '+ n1 + ' por ' + n2 + ' é: ' + quociente + ' e o resto da divisão de '+ n1 + ' por ' + n2 + ' é: ' + sobra
+   }
+</script>
+</html>

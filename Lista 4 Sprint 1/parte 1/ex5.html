@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Qual é o valor da pizza? <input type="text" id="inp_valorPizza"><br>
+    Estão em quantos amigos? <input type="text" id="inp_qtdAmigo"><br>
+
+    <button onclick="rolaPitsa()">Rola a Pizza?</button>
+
+    <div id="mensagem"></div>
+    <div id="mensagem2" style="color: red;"></div>
+
+</body>
+<script>
+    function rolaPitsa(){
+        let valorAmigo = Number(inp_valorPizza.value) / Number(inp_qtdAmigo.value)
+
+        mensagem.innerHTML = `<br>Cada amigo vai pagar ${valorAmigo} pela pizza`
+
+        if (valorAmigo >= 20){
+            mensagem2.innerHTML += `<br><i><b>Deu ruim, pizza muito cara!`
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+<body>
+    <button onclick="sortNota()">notas</button>
+    <button onclick="sortFrequencia()">frequencia</button>
+    <button onclick="verSituacao()">situação</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let nota = ""
+    let frequencia = '' 
+    
+    function sortNota(){
+        let n = Math.random();
+        let intervalo = 10 - 0;
+        let formatado = (n * intervalo + 1).toFixed(1);
+
+        nota = formatado;
+
+        div_mensagem.innerHTML += `<br>${nota}`;
+    }
+
+    function sortFrequencia(){
+        let n = Math.random();
+        let intervalo = 100 - 0;
+        let formatado = (n * intervalo + 1).toFixed(1);
+
+        frequencia = formatado;
+
+        div_mensagem.innerHTML += `<br>${frequencia}`;
+    }
+
+    function verSituacao(){
+        let resultado = ``
+
+        if(frequencia >= 75 && nota >= 6){
+            resultado = 'Aprovado!'  
+        }
+        else{
+            resultado = `Reprovado !`
+        };
+
+        div_mensagem.innerHTML = `<br><br>Com nota média de ${nota} e frequência ${frequencia}%, o aluno está ${resultado}!`
+    }
+</script>

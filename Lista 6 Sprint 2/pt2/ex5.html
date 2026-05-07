@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex4</title>
+</head>
+<body>
+   Digite os seus filmes favoritos em ordem descrescente: <input type="text" id="inp_filme" oninput="verFav()">
+
+   <button onclick="cadastrar()">Cadastrar Filme</button>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+   let listaFilme = []
+
+   function cadastrar(){
+      let filme = inp_filme.value
+
+      listaFilme.push(filme)
+   }
+
+   function verFav(){
+      let tamanho = listaFilme.length
+
+      div_mensagem.innerHTML = `
+      <br>Painel de filmes favoritos<br><br>
+      
+      O filme que mais gosta é: ${listaFilme[0]}<br>
+      Terceiro filme favorito é: ${listaFilme[2]}<br><br>
+
+      Total de filmes cadastrados: ${tamanho}
+      `
+   }
+</script>

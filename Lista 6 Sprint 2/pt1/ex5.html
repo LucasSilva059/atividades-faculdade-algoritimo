@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex5</title>
+</head>
+<body>
+   Digite uma senha: <input type="text" id="inp_senha" oninput="analisar()">
+
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   function analisar(){
+      let senha = inp_senha.value;
+      let novaSenha = senha.replaceAll('a','@');
+      novaSenha = novaSenha.replaceAll('A','@');
+      novaSenha = novaSenha.replaceAll('e','3');
+      novaSenha = novaSenha.replaceAll('E','3');
+
+      div_mensagem.innerHTML = `${novaSenha}`
+   }
+</script>

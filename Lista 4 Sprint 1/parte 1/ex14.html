@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex14</title>
+</head>
+<body>
+   Me fale sua primeira nota <input type="text" id="inp_n1"> <br>
+   Me fale a sua segunda nota <input type="text" id="inp_n2"><br>
+
+   <button onclick="but_verificarSituacao()">Verificar Situação</button>
+
+   <div id="mensagem"></div>
+
+   <script>
+      function but_verificarSituacao(){
+         let media = (Number(inp_n1.value) + Number(inp_n2.value)) / 2
+
+         if(media >= 6){
+            alert `Parabéns, aprovado!`
+         } else{
+            alert `Tente outra vez...`
+         }
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp_numero">
+
+    <button onclick="filtrar()">Viva o 7</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let = contagem = 0
+
+    function filtrar(){
+        let numero = Number(inp_numero.value)
+
+        if(numero > 0 && numero <= 200){
+            while (contagem < numero ){
+                
+                contagem = contagem + numero + 1
+                
+                if((contagem % 7) == 0){
+                    
+                    div_mensagem.innerHTML += `<br> ${contagem}`
+                }
+            }
+        }
+        else{
+            div_mensagem.innerHTML = ``
+            div_mensagem.innerHTML += `ERRO!! Insira um número de 0 a 200`
+        }
+    }
+</script>

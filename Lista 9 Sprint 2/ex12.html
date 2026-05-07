@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX11</title>
+</head>
+<body>
+    <button onclick="avaliar()">Avaliar</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function avaliar(){
+        let n = Math.random();
+        let intervalo = 5 - 0;
+        let formatado = (n * intervalo).toFixed(1);
+        let nota = formatado
+        let imagem = ``
+
+        if(nota >= 0 && nota <= 0.5){
+            imagem = `<img src="" alt="Muito triste">`
+        }
+        else if(nota > 0.5 && nota <= 1.5){
+            imagem = `<img src="" alt="Meio triste">`
+        }
+        else if(nota > 1.5 && nota <= 3.5){
+            imagem = `<img src="" alt="Neutro">`
+        }
+        else if(nota > 3.5 && nota <= 4.5){
+            imagem = `<img src="" alt="Feliz">`
+        }
+        else{
+            imagem = `<img src="" alt="Muito Feliz">`
+        };
+
+        div_mensagem.innerHTML = `Nota recebida:${formatado}<br ]> ${imagem}`;
+    }
+</script>

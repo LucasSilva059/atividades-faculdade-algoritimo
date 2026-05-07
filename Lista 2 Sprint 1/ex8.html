@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex8</title>
+</head>
+<body>
+   Quantas horas voce dormiu? <input type="text" id="inp_horas">
+   <button onclick="calcSono()">Calcular soneca</button>
+
+   <div id="msg"></div>
+
+</body>
+<script>
+   function calcSono(){
+      let fase1 = Number(inp_horas.value) * 0.05
+      let fase2 = Number(inp_horas.value) * 0.45
+      let fase3 = Number(inp_horas.value) * 0.3
+      let faseREM = Number(inp_horas.value) * 0.2
+
+      msg.innerHTML = 'Ao dormir '+ inp_horas.value + ' horas, você dormiu: '+ fase1 + ' horas na fase 1, '  + fase2 + ' horas na fase 2, '  + fase3 + ' horas na fase 3 e '  + faseREM + ' horas na fase REM.'  
+   }
+</script>
+</html>

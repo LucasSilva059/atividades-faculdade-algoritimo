@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   Qual é o Ki base do seu personagem? <input type="text" id="inp_kiBase"><br>
+
+   Transformar em: <br>
+   <button onclick="ssj1()">SSJ1</button>
+   <button onclick="ssj2()">SSJ2</button>
+   <button onclick="ssj3()">SSJ3</button>
+
+   <div id="msg"></div>
+
+</body>
+<script>
+   function ssj1(){
+      let super1 = Number(inp_kiBase.value) * 50;
+
+      msg.innerHTML = 'Após se transformar em Super Sayajin 1, o ki desse Sayajin passa a ser de ' + super1 
+   };
+
+   function ssj2(){
+      let super2 = Number(inp_kiBase.value) * 100;
+
+      msg.innerHTML = 'Após se transformar em Super Sayajin 2, o ki desse Sayajin passa a ser de ' + super2 
+   };
+
+   function ssj3(){
+      let super3 = Number(inp_kiBase.value) * 200;  
+
+      msg.innerHTML = 'Após se transformar em Super Sayajin 3, o ki desse Sayajin passa a ser de ' + super3
+   };
+</script>
+</html>

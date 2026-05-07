@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    Mínimo
+    <input type="" id="inp_minimo">
+    maximo:
+    <input type="text" id="inp_maximo">
+
+    <button onclick="s2pares()">S2 PARES</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function s2pares(){
+        let minimo = inp_minimo.value;
+        let maximo = inp_maximo.value;
+        let mensagem = '';
+        
+        while(minimo < maximo){
+            if(minimo % 2 == 0){
+                mensagem += `Contador: ${minimo}<br>`
+            }
+            minimo ++;
+        }
+        div_mensagem.innerHTML = `${mensagem}`
+    }
+</script>

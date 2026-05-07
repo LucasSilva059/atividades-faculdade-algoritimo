@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex2</title>
+</head>
+<body>
+   Tamanho do celular em polegadas: <input type="text" id="inp_tamanho"> <br>
+
+   <select id="sel_cor"><br>
+      <option selected disabled>Escolha uma cor</option>
+      <option>Preto</option>
+      <option>Prata</option>
+      <option>Azul</option>
+      <option>Vermelho</option>
+   </select>
+
+   <button onclick="but_verificar()">Será que ele gosta?</button><br>
+
+   <div id="div_mensagem"></div>
+
+</body>
+<script>
+   function but_verificar(){
+      let tamanho = Number(inp_tamanho.value)
+      let cor = sel_cor.value
+      
+      if(tamanho > 6.5){
+         if(cor == 'Preto' || cor == 'Prata'){
+            div_mensagem.innerHTML = `<img width="30%" src="https://cdn.jornalopcao.com.br/assets/2014/06/100_9002.jpg" alt="Pessoa Feliz">`
+         }
+         else if(cor == 'Azul' || cor =='Vermelho' ){
+            div_mensagem.innerHTML = `<img width="30%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGmJo5wdvaQxfepeqAq4sDFNj48vva9L58tA&s" alt="Pessoa Triste">`
+         }
+      } 
+      else {
+         div_mensagem.innerHTML = `<img width="30%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGmJo5wdvaQxfepeqAq4sDFNj48vva9L58tA&s" alt="Pessoa Triste">`
+      }
+   }
+</script>
+</html>

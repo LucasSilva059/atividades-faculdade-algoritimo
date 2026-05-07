@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex4</title>
+</head>
+<body>
+   Quanto custa a pizza? <input type="text" id="inp_preco"> <br><br>
+   Quantos amigos vão ajudar a pagar? <input type="" id="inp_amigos"> <br><br>
+
+   <button onclick="amoPizza()"> #lovePizza </button>
+
+   <div id="mensagem"></div>
+</body>
+<script>
+   function amoPizza(){
+      let preco = Number(inp_preco.value)
+      let amigos = Number(inp_amigos.value)
+      let vaquinha = preco / amigos
+
+      mensagem.innerHTML = 'Cada um dos ' + amigos + ' amigos vai pagar R$' + vaquinha
+   }
+</script>
+</html>

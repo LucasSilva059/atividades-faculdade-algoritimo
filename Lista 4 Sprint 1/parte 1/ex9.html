@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex9</title>
+</head>
+<body>
+Quantos homens subiram no elevador? <input type="text" id="inp_qtdHomem"> <br>
+Quantas Mulheres subiram no elevador? <input type="text" id="inp_qtdMulher">
+
+<button onclick="but_analisar()">Analisar Peso</button>
+
+<div id="mensagem"></div>
+
+</body>
+
+<Script>
+   function but_analisar() {
+      let pesoHomem = Number(inp_qtdHomem.value) * 80;
+      let pesoMulher = Number(inp_qtdMulher.value) * 60;
+      let pesoTotal = pesoMulher + pesoHomem;
+
+      mensagem.innerHTML = `<br>Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTotal}kg`
+
+      if(pesoTotal > 800){
+         mensagem.innerHTML += `<p style="color: blue;">Será necessário que alguém desça para que o elevador se movimente</p>`
+      };
+   };
+</Script>
+
+
+</html>

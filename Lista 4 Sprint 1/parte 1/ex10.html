@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex10</title>
+</head>
+<body>
+   Qual foi o último SITCOM que você assistiu? <input type="text" id="inp_serie"><br>
+   Quantos episódios você viu dessa serie? <input type="text" id="inp_qtdEps"><br>
+
+   <button onclick="but_verificarNivel()">Verificar Nível</button>
+
+   <div id="mensagem"></div>
+
+   <script>
+      function but_verificarNivel(){
+         let qtdMinutos = Number(inp_qtdEps.value) * 22;
+         let serie = inp_serie.value   
+         
+         mensagem.innerHTML = `Vejo que você gosta da série ${serie}<br>`;
+
+         if(qtdMinutos > 1800){
+            mensagem.innerHTML += `Uau, você realmente gosta dessa série`
+         };
+      };
+
+   </script>
+
+
+
+
+</body>
+</html>

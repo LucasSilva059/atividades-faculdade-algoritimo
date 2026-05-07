@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex3</title>
+</head>
+<body>
+   Digite o nome do aluno: <input type="text" id="inp_aluno">
+
+   <button onclick="cadastrar()">cadastrar</button>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+   let listaAluno = []
+
+   function cadastrar(){
+      let aluno = inp_aluno.value;
+      let mensagem = ''
+      listaAluno.push(aluno);
+      
+      for(let i = listaAluno.length - 1; i >= 0 ; i-- ){
+         mensagem += listaAluno[i] + '<br>'
+      }
+      div_mensagem.innerHTML = mensagem;
+   }
+</script>

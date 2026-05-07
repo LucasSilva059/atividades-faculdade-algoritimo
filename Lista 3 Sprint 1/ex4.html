@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>exercucui4</title>
+</head>
+<body>
+   <input type="text" id="inp_qtdDias">
+   
+   <button onclick="but_dias()">Processar Dias</button> <br><br>
+   <button onclick="but_stopOp()">Stop Operação</button>
+   <button onclick="but_restart()">Reiniciar Processo</button>
+
+   <div id="mensagem"></div>
+
+   <script>
+      let TVM = 1000
+
+      function but_dias(){
+         let dias = Number(inp_qtdDias.value);
+         let horas = dias * 24;
+
+         TVM -= horas;
+
+         let TVMatt = TVM + horas;
+
+         mensagem.innerHTML += `O TVM anterior era de ${TVMatt} horas e após ${dias} dias de operação o TVM passou para ${TVM} horas <br>`
+      };
+
+      function but_stopOp(){
+         let dias = Number(inp_qtdDias.value);
+         let horas = dias * 24;
+
+         TVM -= 100;
+
+         let TVMatt = TVM + horas;
+         
+         mensagem.innerHTML += `O TVM anterior era de ${TVMatt} horas, após o Stop de operação o TVM passou para ${TVM} horas <br>`
+      };
+
+      function but_restart(){
+         mensagem.innerHTML = ''
+      };
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex10</title>
+</head>
+<body>
+   Qual é o sabor da pizza? <input type="text" id="inp_saboRR"><br><br>
+   Quanto custa a pizza? <input type="text" id="inp_preco"> <br><br>
+   Quantos amigos vão ajudar a pagar? <input type="" id="inp_amigos"> <br><br>
+
+   <button onclick="valorAmigos()"> Ver valor por amigo </button>
+
+   <div id="mensagem"></div>
+</body>
+<script>
+   function valorAmigos(){
+      let preco = Number(inp_preco.value)
+      let amigos = Number(inp_amigos.value)
+      let vaquinha = (preco / amigos) + (preco * 0.1)
+
+      mensagem.innerHTML = 'Cada um dos ' + amigos + ' amigos vai pagar R$' + vaquinha + ' para a pizza de ' + inp_saboRR.value + '.'
+   }
+</script>
+</html>

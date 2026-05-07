@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex20</title>
+</head>
+<body>
+   Qual é sua meta de economia? <input type="text" id="inp_meta"><br>
+   Quanto você tem guardado? <input type="text" id="inp_guardado"><br>
+
+   <button onclick="but_analisar()">Analisar economia</button>
+
+   <div id="mensagem"></div>
+
+   <script>
+      function but_analisar(){
+         let meta = Number(inp_meta.value);
+         let guardado = Number(inp_guardado.value);
+         let diferencaMenos = meta - guardado;
+         let diferencaMais = guardado - meta;
+
+         if(guardado >= meta){
+            mensagem.innerHTML = `Parabéns, meta alcançada!`
+            if(guardado > meta){
+               mensagem.innerHTML += `Meta ultrapassada em ${diferencaMais}`
+            };
+         } else{
+            mensagem.innerHTML = `Força! Ainda em busca da meta! Falta ${diferencaMenos}`
+         };
+      };
+   </script>
+</body>
+</html>

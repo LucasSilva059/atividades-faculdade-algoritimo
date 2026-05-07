@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex7</title>
+</head>
+<body>
+   Quantos pães franceses você come por dia? <input type="text" id="inp_pao"> <br>
+   Quantos pacotes de bolacha voce come por dia? <input type="text" id="inp_bolacha"><br>
+   Quantos copos de achocolatado voce toma por dia? <input type="text" id="inp_achocolatado"><br>
+
+   <button onclick="verificar()">Verificar calorias</button>
+
+   <div id="div_mensagem"></div>
+
+</body>
+<script>
+   function verificar(){
+      let pao = Number(inp_pao.value) * 50;
+      let bolacha = Number(inp_bolacha.value) * 80;
+      let achocolatado = Number(inp_achocolatado.value) * 70;
+      let calorias = pao + bolacha + achocolatado
+      
+      if(calorias < 200){
+         div_mensagem.innerHTML = `Parabéns! Shape ta vindo!`
+      }
+      else if(calorias <= 400){
+         div_mensagem.innerHTML = `Cuidado, vai ficar igual o Toguro!`
+      }
+      else{
+         div_mensagem.innerHTML = `Alerta crítico de saúde`
+      };
+   }
+</script>
+</html>

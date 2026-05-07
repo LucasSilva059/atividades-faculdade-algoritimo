@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos KWh você gasta por mês? <input type="text" id="inp_kwh">
+    <button onclick="calc()">Calcular conta de luz</button>
+
+</body>
+<script>
+    function calc(){
+        let kwhMes = Number(inp_kwh.value)
+        let valorConta = kwhMes * 0.85
+        let descontado = valorConta - (valorConta * 0.10)
+  
+        if (kwhMes < 100){
+            alert ('O valor da sua conta de luz é: ' + descontado)
+        } else{
+        alert ('O valor da sua conta de luz é: ' + valorConta)
+        }
+    }
+</script>
+
+</html>

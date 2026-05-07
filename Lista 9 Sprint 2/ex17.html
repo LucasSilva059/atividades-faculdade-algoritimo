@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex16</title>
+</head>
+<body>
+   Digite o seu nome: <input type="text" id="inp_nome">
+   Digite seu numero da sorte: <input type="text" id="inp_numero"> 
+
+   <button onclick="sortear()">Sortear</button>
+
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   let contador = 0
+
+   function sortear(){
+      let n = Math.random();
+      let intervalo = 10 - 1;
+      let formatado = (n * intervalo + 1).toFixed()
+      let nome = inp_nome.value;
+      let numeroSorte = Number(inp_numero.value)
+      
+      contador ++
+
+      if(numeroSorte == formatado){
+         alert(`Parabéns, ${nome} você foi sorteado(a) após ${contador} sorteios!`)
+      }
+      else if(numeroSorte > 0 && numeroSorte <= 10){
+         alert(`${nome}, o seu número sorteado foi ${formatado}`)
+      }
+      else{
+         alert (`Erro: Insira um número válido`)
+      }
+
+   }
+</script>

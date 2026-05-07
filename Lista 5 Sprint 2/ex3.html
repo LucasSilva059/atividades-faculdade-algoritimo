@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex3</title>
+</head>
+<body>
+   
+   Tipo de passageiro : <br>
+   <select id="sel_passageiro">
+      <option disabled selected>Selecione o tipo de passageiro</option>
+      <option> Comum </option>
+      <option>Estudante</option>
+      <option>Idoso/PNE</option>
+   </select><br><br>
+
+      Tipo de passagem : <br>
+      <select id="sel_passagem">
+         <option selected disabled>Selecione o tipo de passagem</option>
+         <option>Passagem única</option>
+         <option>Passagem integração</option>
+      </select><br><br>
+
+      <button onclick="but_simular()">Simular Preço</button><br>
+
+      <div id="div_mensagem"></div>
+
+</body>
+<script>
+   function but_simular(){
+      let tipoPassageiro = sel_passageiro.value;
+      let tipoPassagem = sel_passagem.value;
+      let valor = 0;
+
+      if(tipoPassagem == 'Passagem única'){
+         valor = 4.40
+         if(tipoPassageiro == 'Comum'){
+            div_mensagem.innerHTML = `Valor da passagem escolhida: R$${valor}`
+         }
+         else if(tipoPassageiro == 'Estudante'){
+            valor = valor * 0.5
+            div_mensagem.innerHTML = `Valor da passagem escolhida: R$${valor}`
+         }
+         else if(tipoPassageiro == 'Idoso/PNE'){
+            valor = 'Gratuito'
+            div_mensagem.innerHTML = `Valor da passagem escolhida: ${valor}`
+         }   
+      }
+
+      else{
+         valor = 5.90
+         if(tipoPassageiro == 'Comum'){
+            div_mensagem.innerHTML = `Valor da passagem escolhida: R$${valor}`
+         }
+         else if(tipoPassageiro == 'Estudante'){
+            valor = valor * 0.5
+            div_mensagem.innerHTML = `Valor da passagem escolhida: R$${valor}`
+         }
+         else if(tipoPassageiro == 'Idoso/PNE'){
+            valor = 'Gratuito'
+            div_mensagem.innerHTML = `Valor da passagem escolhida: ${valor}`
+         }
+      };
+
+   }
+</script>
+</html>

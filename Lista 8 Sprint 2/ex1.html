@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Exercício 1</title>
+</head>
+<body>
+   Digite o nome de um filme: <input type="text" id="inp_movie">
+
+   <button onclick="register()">cadastrar</button>
+
+   <div id="div_menssage"></div>
+</body>
+</html>
+<script>
+   let movieList = []
+   
+   function register(){
+      let movie = inp_movie.value;
+      let menssage = ''
+      movieList.push(movie);
+
+      for(let i = 0; i < movieList.length; i++){
+      menssage += `${movieList[i]} <br>`
+      };
+      div_menssage.innerHTML = menssage
+   }
+</script>

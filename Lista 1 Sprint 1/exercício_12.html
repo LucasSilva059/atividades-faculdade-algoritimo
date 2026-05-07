@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOUZE</title>
+</head>
+<body>
+    Quantos copos de água você bebe? <input type="text" id="inp_copoAgua">
+    <br><br>
+    Em quanto tempo você bebe esses copos de água <input type="text" id="inp_tempoAgua">
+    <br><br>
+    <button onclick="fimMonitoramento()"> Finalizar Monitoramento</button>
+    <div id="exibirCopo"></div>
+    <div id="exibirTempo"></div>
+</body>
+    <script>
+        function fimMonitoramento(){
+            exibirCopo.innerHTML = 'Você bebeu ' + inp_copoAgua.value +' copos de água.'
+            exibirTempo.innerHTML = 'O monitoramento durou ' + inp_tempoAgua + ' minutos'
+        }
+    </script>
+
+</html>

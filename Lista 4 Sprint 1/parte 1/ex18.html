@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex18</title>
+</head>
+<body>
+    Digite um número: <input type="text" id="inp_n1"><br>
+    Digite outro número: <input type="text" id="inp_n2"><br>
+
+    <button onclick="teste()">Testar</button>
+
+    <div id="mensagem"></div>
+
+    <script>
+        function teste() {
+        let n1 = Number(inp_n1.value)
+        let n2 = Number(inp_n2.value)
+
+        if (n1%n2 == 0){
+            mensagem.innerHTML = `<img style="width: 10%;" id="joia" src="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f44d.png" alt="Positivo">`
+        } else{
+            mensagem.innerHTML = `<img style="width: 10%;" id="desjoia" src="https://images.emojiterra.com/google/android-11/512px/1f44e.png" alt="Negativo">`
+        }
+    };
+
+        
+    </script>
+</body>
+</html>

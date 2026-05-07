@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+
+<body>
+    N1: <input type="text" id="inp_n1"><br>
+    N2: <input type="text" id="inp_n2"> <br>
+
+    <button onclick="Multiplicar()"> Multiplicar</button>
+    <button onclick="Dividir()"> Dividir</button>
+    <button onclick="Adicionar()"> Adicionar</button>
+    <button onclick="Subtrair()"> Subtrair</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+<script>
+   function Multiplicar() {
+      div_mensagem.innerHTML = `A razão entre ${inp_n1.value} e ${inp_n2.value} é: ${inp_n1.value * inp_n2.value}`
+   };
+   function Dividir() {
+      div_mensagem.innerHTML = 'O produto entre '+ inp_n1.value + ' e ' + inp_n2.value + ' é: ' + (Number(inp_n1.value) / Number(inp_n2.value))
+   }; 
+   function Adicionar() {
+       div_mensagem.innerHTML = 'A soma entre '+ inp_n1.value + ' e ' + inp_n2.value + ' é: ' + (Number(inp_n1.value) + Number(inp_n2.value))
+    };
+    function Subtrair() {
+        div_mensagem.innerHTML = 'A subtração entre '+ inp_n1.value + ' e ' + inp_n2.value + ' é: ' + (Number(inp_n1.value) - Number(inp_n2.value))
+    };
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma frase: <input type="text" id="inp_frase">
+
+    <button onclick="analisar()">Analisar Frase</button>
+
+    <div  id="div_mensagem"></div>
+</body>
+<script>
+    function analisar(){
+        let texto = inp_frase.value
+
+        if (texto.includes("teste") || texto.includes("abc") || texto.includes("spam")){
+            div_mensagem.innerHTML = `<br> <br> <spam style="color: red;">Frase inválida!!</spam>`
+        } else{
+            div_mensagem.innerHTML = `<br> <br> <spam style="color: green;">Frase válida</spam>`
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex13</title>
+</head>
+<body>
+   Quanto você paga na passagem de ônibus? <input type="text" id="inp_valor"><br><br>
+   Quantas viagens você faz por mês? <input type="text" id="inp_viagens"><br><br>
+   Qual é a distância do seu trabalho para sua casa? (em km) <input type="text" id="inp_distancia"><br><br>
+
+   <button onclick="calc()">Calcular VT</button>
+
+   <div id="mensagem"></div>
+
+</body>
+<script>
+   function calc(){
+      let valor = Number(inp_valor.value)
+      let viagens = Number(inp_viagens.value)
+      let viagensApp = viagens * 0.10
+      let viagensBusao = viagens * 0.9
+      let valorApp =  viagensApp * (inp_distancia.value * 0.75)
+      let resultado = (viagensBusao * valor) + valorApp 
+
+      mensagem.innerHTML = `Você vai gastar R$${resultado} por mês com transporte.`
+   };
+
+</script>
+</html>

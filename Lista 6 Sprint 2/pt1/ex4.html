@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex4</title>
+</head>
+<body>
+   Digite uma palavra: <input type="text" id="inp_palavra1">
+   Digite uma outra palavra: <input type="text" id="inp_palavra2">
+
+   <button onclick="analisar()">Analisar Palavras</button>
+
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+   function analisar(){
+      let palavra1 = inp_palavra1.value;
+      let palavra2 = inp_palavra2.value;
+
+      if (palavra1 == palavra2){
+         div_mensagem.innerHTML = `As palavras "${palavra1}" e "${palavra2}" são exatamente iguais!`
+      }
+      else if(palavra1.toUpperCase() == palavra2.toUpperCase()){
+         div_mensagem.innerHTML = `As palavras "${palavra1}" e "${palavra2}" possuem o mesmo conteúdo mas tem a digitação diferente(maiúsculas e minúsculas)`
+      }
+      else{
+         div_mensagem.innerHTML = `As palavras "${palavra1}" e "${palavra2}" são completamente didferentes!`
+      };
+
+   }
+</script>

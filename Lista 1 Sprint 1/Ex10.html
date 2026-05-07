@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   Qual foi a distância percorrida? (em km) <input type="text" id="inp_distancia">
+   <br>
+   Qual foi o tempo gasto nessa distancia? (em minutos) <input type="text" id="inp_tempo">
+   <br>
+   <button onclick="finalTreino()"> Finalizar Treino </button>
+</body>
+<script>
+   function finalTreino(){
+      alert ('Você percorreu ' + inp_distancia.value + ' KMs hoje!' )
+      alert ('O seu tempo total de exercício foi de ' + inp_tempo.value + ' minutos.')
+   }
+</script>
+</html>

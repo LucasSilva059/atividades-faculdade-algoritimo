@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex3</title>
+</head>
+<body>
+   Digite o seu bairro: <input type="text" id="inp_bairro" placeholder="Bairro">
+
+   <button onclick="cadastrar()">Cadastrar Bairro</button>
+   
+   <hr>
+   
+   Em quantos bairros você morou? <input type="text" id="inp_nBairro">
+   
+   <button onclick="relembrar()">Relembrar Moradia</button>
+   
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   let listaBairro = []
+
+   function cadastrar(){
+      let bairro = inp_bairro.value
+
+      listaBairro.push(bairro)
+   }
+
+   function relembrar(){
+      let nBairro = Number(inp_nBairro.value);
+
+      if(listaBairro < nBairro){
+         div_mensagem.innerHTML = `Você ainda não morou num ${nBairro}° bairro!`
+      }
+      else{
+         div_mensagem.innerHTML = `${listaBairro[nBairro - 1]}`
+      };
+   };
+</script>

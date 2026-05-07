@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex14</title>
+</head>
+<body>
+   Como está se sentindo hoje?: <br>
+   <select id="sel_humor">
+      <option selected disabled>Selecione um humor</option>
+      <option>Feliz</option>
+      <option>Triste</option>
+      <option>Bravo</option>
+      <option>Surpreso</option>
+      <option>Cansado</option>
+   </select>
+      
+      <button onclick="verificar()">Mostrar Humor</button>
+
+      <div id="div_mensagem"></div>
+</body>
+<script>
+   function verificar(){
+      let humor = sel_humor.value;
+
+      if(humor == 'Feliz'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://i.pinimg.com/originals/64/d2/b1/64d2b1c4242fc4751c05006d16a0f877.jpg" alt="Feliz">`
+      }
+      else if(humor == 'Triste'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://cdn.pixabay.com/photo/2020/02/08/00/40/emoji-4828792_640.png" alt="Triste">`
+      }
+      else if(humor == 'Bravo'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://img2.lovecell.com.br/d9ff25d6c2a1f91a138f12b1c59c22af947a8139f3a7d6576820d8d7ef32bcc4.webp" alt="Bravo">`
+      }
+      else if(humor == 'Surpreso'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://thumbs.dreamstime.com/z/emoticon-surpreendido-8727436.jpg" alt="Surpreso">`
+      }
+      else if(humor == 'Cansado'){
+         div_mensagem.innerHTML = `<img style="width: 30%;" src="https://thumbs.dreamstime.com/z/emoticon-cansado-44099539.jpg" alt="Cansado">`
+      };
+   }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex5</title>
+</head>
+<body>
+   Qual é o peso da sua criança? <input type="text" id="inp_peso">
+
+   <button onclick="verificar()">Verificar Peso</button>
+
+   <div id="div_mensagem"></div>
+
+</body>
+<script>
+   function verificar(){
+      let peso = Number(inp_peso.value);
+
+      if(peso <= 13.5){
+         div_mensagem.innerHTML = `Criança está abaixo do peso para essa idade`
+      } 
+      else if(peso == 18.3){
+         div_mensagem.innerHTML = `Criança está com o peso perfeito para essa idade` 
+      }
+      else if(peso <= 21.2){
+         div_mensagem.innerHTML = `Criança está com o peso na média para essa idade`
+      }
+      else{
+         div_mensagem.innerHTML = `Criança está acima do peso para essa idade`
+      };
+
+   }
+</script>
+</html>

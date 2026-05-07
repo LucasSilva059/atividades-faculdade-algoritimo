@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex13</title>
+</head>
+<body>
+   Qual é o saldo da sua conta? <input type="text" id="inp_saldo"><br>
+   Quanto vai tirar da conta? <input type="text" id="inp_debito"><br>
+
+   <button onclick="but_analisarConta()">Analisar Conta</button>
+
+   <div  id="mensagem"></div>
+
+   <script>
+      function but_analisarConta(){
+         let novoSaldo = Number(inp_saldo.value) - Number(inp_debito.value); 
+
+         if(novoSaldo >= 0){
+            mensagem.innerHTML = `<p style="color: blue;"><i> O saldo atual da conta corrente é ${novoSaldo} </p>`
+         }else {
+            mensagem.innerHTML = `<p style="color: red;"><b> O saldo atual da conta corrente é ${novoSaldo} </p>`}
+      };
+   </script>
+</body>
+</html>

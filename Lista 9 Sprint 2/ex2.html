@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex2</title>
+</head>
+<body>
+   <button onclick="sortear()">sortear</button>
+
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   function sortear(){
+      let aleatorio = Math.random()
+      let formatado = (aleatorio * 3 + 1).toFixed();
+
+      let time = formatado;      
+
+      if(time == 1){
+         div_mensagem.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/S%C3%A3o_Paulo_Futebol_Clube_logo_%282022%29.svg/250px-S%C3%A3o_Paulo_Futebol_Clube_logo_%282022%29.svg.png" height = 150px;" alt="sp">`
+      }
+      else if(time == 2){
+         div_mensagem.innerHTML = `<img src="https://lojapalmeiras.vtexassets.com/arquivos/ids/190217-800-auto?v=638804071626600000&width=800&height=auto&aspect=true" height = 150px;" alt="palmeira">`
+      }
+      else if(time == 3){
+         div_mensagem.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQh01NHqWBG0YhL-ZK7V2UdY8Di1RZYSLn7g&s" height = 150px;" alt="corinthian">`
+      }
+      else if(time == 4){
+         div_mensagem.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1280px-Santos_logo.svg.png" height = 150px;" alt="santos">`
+      }
+
+   }
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex2</title>
+</head>
+<body>
+   Destinos da viagem: <input type="text" placeholder="Destino" id="inp_destino">
+
+   <button onclick="adicionar()">Adicionar</button>
+
+   <hr>
+   
+   <button onclick="primeiraViagem()">Primeira Viagem</button>
+   <button onclick="terceiraViagem()">Terceira Viagem</button>   
+   <button onclick="ultimaViagem()">Última Viagem</button>
+   
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   let listaViagem = [] // arrumar as virgulas e espaços aqui
+
+   function adicionar(){
+      let destino = inp_destino.value
+
+      listaViagem.push(destino)
+   }
+
+   function primeiraViagem(){
+      let tamanho = listaViagem.length
+      
+      if(tamanho >= 1){
+         div_mensagem.innerHTML = `${listaViagem[0]}`
+      }
+      else{
+         div_mensagem.innerHTML = `Ainda não viajou`
+      };
+   };
+
+   function terceiraViagem(){
+      let tamanho = listaViagem.length
+      
+      if(tamanho >= 3){
+         div_mensagem.innerHTML = `${listaViagem[2]}`
+      }
+      else{
+         div_mensagem.innerHTML = `Ainda não fez a terceira viagem`
+      };
+   }
+
+   function ultimaViagem(){
+      let tamanho = listaViagem.length
+      
+      if(tamanho >= 1){
+         div_mensagem.innerHTML = `${listaViagem[tamanho - 1]}`
+      }
+      else{
+         div_mensagem.innerHTML = `Ainda não viajou`
+      };
+   }
+</script>

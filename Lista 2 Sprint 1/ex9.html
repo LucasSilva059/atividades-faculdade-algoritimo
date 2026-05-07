@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex9</title>
+</head>
+<body>
+   Votos do Candidato Hernesto Honesto: <input type="text" id="inp_cand1"><br><br>
+   Votos do candidato Mariana Bacana: <input type="text" id="inp_cand2"><br><br>
+   Votos em branco: <input type="text" id="inp_branco"><br><br>
+   Votos nulo: <input type="text" id="inp_nulo"><br><br>
+
+   <button onclick="resultado()">Resultado da Eleição</button>
+
+   <div id="msg1"></div>
+   <div id="msg2"></div>
+   <div id="msg3"></div>
+   <div id="msg4"></div>
+
+
+</body>
+<script>
+   function resultado(){
+      let hernesto = Number(inp_cand1.value)
+      let mari = Number(inp_cand2.value)
+      let branco = Number(inp_branco.value)
+      let nulo = Number(inp_nulo.value)
+      let total = hernesto + mari + branco + nulo
+
+      msg1.innerHTML = 'Total de votos: ' + total
+      msg2.innerHTML = 'Total de votos para Hernesto Honesto: ' + hernesto + ' ('+ (hernesto / total) * total + '% dos votos)'
+      msg3.innerHTML = 'Total de votos para Mariana bacana: ' + mari + ' ('+ (mari / total) * 100 +'% dos votos)'
+      msg4.innerHTML = 'Total de votos inválidos: ' + (branco + nulo) + ' ('+ ((branco+nulo) / total) * 100 +'% dos votos)'
+      }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex4</title>
+</head>
+<body>
+   Digite o nome do projeto em que voce trabalhou: <input type="text" name="" id="inp_projeto">
+
+   <button onclick="registrar()">Registrar Projeto</button>
+   <button onclick="mostrar()">Mostrar Projeto</button>
+
+   <div id="div_mensagem"></div>
+   <div id="div_mensagem2"></div>
+</body>
+</html>
+<script>
+   let listaProjeto = []
+   let experiencia = ''
+   
+
+
+   function registrar(){
+      let projeto = inp_projeto.value; 
+      listaProjeto.push(projeto);
+      let mensagem = ''
+
+      if(listaProjeto.length <= 4){
+         experiencia = 'Junior'
+      }
+      else if(listaProjeto.length <= 12){
+         experiencia = 'Pleno'
+      }
+      else{
+         experiencia = 'Senior'
+      }
+      mensagem = `Você já fez ${listaProjeto.length} projetos. Por isso você é um profissional ${experiencia}`
+
+      div_mensagem.innerHTML = mensagem;
+   }
+
+   function mostrar(){
+      let projeto = inp_projeto.value; 
+      listaProjeto.push(projeto);
+      let mensagem = ''
+      
+      for(i = listaProjeto.length - 1; i >= 0 ; i--){
+         mensagem +='<br>'+ listaProjeto[i] 
+      }
+      div_mensagem2.innerHTML = mensagem;
+   }
+</script>

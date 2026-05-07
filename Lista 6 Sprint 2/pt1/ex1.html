@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    fale uma frase <input type="text" id="inp_frase">
+
+    <button onclick="analisar()">Analisar Frase</button>
+
+    <div  id="div_mensagem"></div>
+</body>
+<script>
+    function analisar(){
+        let texto = inp_frase.value
+        let contagem = texto.length
+
+        div_mensagem.innerHTML = `<br> O tamanho da frase é: ${contagem}`
+
+        if (contagem < 10){
+            div_mensagem.innerHTML += `<br> <br> <spam style="color: red;">Frase curta!!</spam>`
+        } else{
+            div_mensagem.innerHTML += `<br> <br> <spam style="color: blue;">Frase Longa</spam>`
+        }
+    }
+</script>
+
+</html>

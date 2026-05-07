@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   Chute uma letra: <input type="text" id="inp_letra">
+
+   <button onclick="verificarLetra()">Verificar Letraa</button><br><br>
+
+   Chute a palavra: <input id="inp_chute">
+
+   <button onclick="verificarPalavra()">Verificar Palavra</button>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+   let palavraSecreta = 'gato'
+
+   function verificarLetra(){
+      let letra = inp_letra.value
+
+      if(palavraSecreta.includes(letra)){ // nao sei como pegar só uma letra
+         div_mensagem.innerHTML += `<br>A letra "${letra}" aparace na Palavra Secreta!!`
+      }
+      else{
+         div_mensagem.innerHTML += `<br>A letra "${letra}" não aparace na Palavra Secreta...`
+      };
+   }
+
+
+   function verificarPalavra(){
+      let chute = inp_chute.value
+      
+      if(palavraSecreta == chute){
+         div_mensagem.innerHTML = ' '
+         div_mensagem.innerHTML += `Parabéns!! a Palavra Secreta era "${palavraSecreta}"`
+      }
+      else{
+         div_mensagem.innerHTML = ' '
+         div_mensagem.innerHTML += `A Palavra Secreta não é "${chute}"`
+      }
+   }
+</script>

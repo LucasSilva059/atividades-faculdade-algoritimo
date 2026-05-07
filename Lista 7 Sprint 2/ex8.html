@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp_numero">
+
+    <button onclick="filtrar()">S2 Multiplos de 5</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let = contagem = 0
+
+    function filtrar(){
+        let numero = Number(inp_numero.value)
+
+        if(numero >= 20 && numero <= 100){
+            while (contagem < numero ){
+                
+                contagem = contagem+ numero + 1
+                
+                if((contagem % 5) == 0){
+                    
+                    div_mensagem.innerHTML += `<br> ${contagem}`
+                }
+            }
+
+        }
+        else{
+            div_mensagem.innerHTML = ``
+            div_mensagem.innerHTML += `ERRO!! Insira um número de 20 a 100`
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Qual é a sua renda familiar? <input type="text" id="inp_renda"> <br>
+Quanto será o valor da presação? <input type="text" id="inp_prestacao"> <br><br>
+
+<button onclick="verificar()">Verificar Financiamento</button>
+
+<div id="mensagem"></div>
+
+</body>
+<script>
+    function verificar() {
+        let financia = (Number(inp_prestacao.value) / Number(inp_renda.value)) * 100 
+
+        mensagem.innerHTML = `A prestação corresponde a ${financia}% da renda familiar`
+
+        if (financia > 30){
+            mensagem.innerHTML += `<p style="color: red;"><i><b>Sera necessário complementar a renda familiar</p>`
+        }
+    }
+</script>
+</html>

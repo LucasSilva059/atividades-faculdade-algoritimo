@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex7</title>
+</head>
+<body>
+   Qual é seu nome? <input type="text" id="inp_nome"><br><br>
+   Quanto você tirou na continuada? <input type="text" id="inp_continuada"><br><br>
+   Quanto você tirou na semestral? <input type="text" id="inp_semestral"><br><br>
+
+   <Button onclick="calcMedia()">Calcular Média</Button>
+
+   <div id="msg"></div>
+
+</body>
+<script>
+   function calcMedia(){
+      let media = (Number(inp_continuada.value)* 0.4) + (Number(inp_semestral.value) * 0.6)
+
+      msg.innerHTML = inp_nome.value + ', sua média é de: ' + media
+   }
+</script>
+</html>

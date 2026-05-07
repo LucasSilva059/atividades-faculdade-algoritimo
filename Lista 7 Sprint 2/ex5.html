@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas voltas o carro dará na corrida <input type="text" id="inp_qtdVolta"><br>
+
+    <button onclick="analisar()">Iniciar Corrida</button><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+
+    let contagem = 1
+    
+    function analisar(){
+        let qtdVolta = inp_qtdVolta.value
+        
+        while(contagem <= qtdVolta){
+            contagem = contagem + 1
+            
+            div_mensagem.innerHTML += `<br>Carro dando a ${contagem}° volta`
+            
+            if(contagem > qtdVolta){ 
+            div_mensagem.innerHTML += `<br>Corrida Finalizada`
+            }
+        }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>exercicio3</title>
+</head>
+<body>
+   Valor recebido com venda de peças: <input type="text" id="inp_valorPeca"> <br><br>
+   Valor recebido com venda de serviços: <input type="text" id="inp_valorServico"> <br><br>
+   Qual é a porcentagem de impostos sobre os valores recebidos? <input type="text" id="inp_valorImposto"><br><br>
+   Qual é o valor do seu gasto mensal? <input type="text" id="inp_valorGasto"> <br><br>
+
+   <button onclick="acumular()">Acumular</button>
+
+   <div id="mensagem"></div>
+
+   <script>
+      let mes = 0
+      let saldoAtual = 0
+      
+      function acumular() {
+         mes += 1;
+         
+         let totalRecebido = Number(inp_valorPeca.value) + Number(inp_valorServico.value);
+         let valorImposto = (Number(inp_valorImposto.value) * 0.01) *  totalRecebido;
+         let saldoFinal = (totalRecebido - valorImposto) - inp_valorGasto.value
+
+         saldoAtual += saldoFinal;
+
+         mensagem.innerHTML += 
+         `Resumo do mês ${mes}<br>
+         Total recebido = R$${totalRecebido}<br>
+         Valor do Imposto = R$${valorImposto}<br>
+         Saldo Final de R$${saldoFinal} <br>
+         Acumulado até o Momento = R$${saldoAtual}<br><br><br>`;
+      };
+   </script>
+</body>
+</html>

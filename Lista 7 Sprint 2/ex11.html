@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tabuada colorida</title>
+</head>
+<body>
+   escolha a sua tabuada:
+   <select id="sel_numero">
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+   </select>
+   
+   <br>
+ 
+   até que numero quer sua tabuada? 
+   <input type="text" id="inp_numero">
+
+   <br><br>
+
+   <button onclick="ver()">ver tabuada</button>
+
+   <br><br>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+   
+   function ver(){
+      let nMaximo = Number(inp_numero.value);
+      let tabuada = Number(sel_numero.value);
+      let contagem = 1; 
+      
+      div_mensagem.innerHTML += ``
+
+      while(contagem <= nMaximo){
+         let conta = tabuada * contagem;
+
+         if(contagem % 2 == 0){
+            div_mensagem.innerHTML += `<span style="color: blue;">${tabuada} X ${contagem} = ${conta}</span><br>`
+         }
+         else{
+            div_mensagem.innerHTML += `<span style="color: red;">${tabuada} X ${contagem} = ${conta}</span><br>`
+         }
+         contagem += 1;
+      };
+   }
+</script>

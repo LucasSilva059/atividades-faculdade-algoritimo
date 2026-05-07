@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio17</title>
+</head>
+<body>
+    Digite um número: <input type="text" id="inp_n1">
+
+    <button onclick="analisar()">Analisar</button>
+
+    <div id="mensagem" ></div>
+
+    <script>
+        function analisar(){
+            let n1 = inp_n1.value;
+
+            if(n1%2 == 0){
+                mensagem.innerHTML = `<p style="color: red; background-color: yellow;"> Esse número é par</p>`
+            } else{
+                mensagem.innerHTML += `<b> <p style="color: blue;"> Esse número é impar </p>`
+            };
+        };
+    </script>
+</body>
+</html>

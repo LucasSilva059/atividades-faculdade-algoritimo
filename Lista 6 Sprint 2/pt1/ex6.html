@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex6</title>
+</head>
+<body>
+   Digite uma frase: <input type="text" id="inp_frase" ><br>
+   Qual é o número da letra que quer ver? <input type="text" id="inp_nFrase" oninput="analisar()"><br>
+
+   <div  id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+   function analisar(){
+      let frase = inp_frase.value
+      let nLetra = Number(inp_nFrase.value);
+      let tamanho = frase.length
+
+      let primeiraLetra = frase[0] 
+      let letraX = frase[nLetra - 1]
+      let ultimaLetra = frase[tamanho - 1]
+
+      if (nLetra <= 0){
+         div_mensagem.innerHTML = `<spam style="color: red;"> ERRO<br>Digite um número maior que 0! </spam>`
+      } 
+      else{
+         div_mensagem.innerHTML = `<br><br>
+         A primeira letra é: ${primeiraLetra}<br>
+         A ${nLetra}ª letra é: ${letraX}<br>
+         A ultima lertra é: ${ultimaLetra}`
+      };
+
+   }
+</script>

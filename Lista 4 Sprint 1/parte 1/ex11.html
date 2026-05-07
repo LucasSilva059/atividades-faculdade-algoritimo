@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex11</title>
+</head>
+<body>
+   Qual é seu nome? <input type="text" id="inp_nome"><br>
+   Quantos anos você tem? <input type="text" id="inp_idade"><br>
+
+   <button onclick="but_avaliar()">Avaliar Aluno</button>
+
+   <div id="mensagem"></div>
+
+</body>
+<script>
+   function but_avaliar(){
+      let idade = Number(inp_idade.value);
+      let nome = inp_nome.value;
+
+      if(idade>=18){
+         mensagem.innerHTML = `${nome}, vamos tirar a CNH?`
+      } else{
+         mensagem.innerHTML = `${nome}, vai jogar PlayStation!!`
+      };
+   };
+</script>
+</html>

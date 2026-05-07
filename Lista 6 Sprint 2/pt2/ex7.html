@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ex4</title>
+</head>
+<body>
+   Digite os seus filmes favoritos em ordem descrescente: <input type="text" id="inp_filme">
+
+   <button onclick="cadastrar()">Cadastrar Filme</button>
+
+   <div  id="div_mensagem"></div>
+</body>
+</html>
+<script>
+   let listaFilme = []
+   let contador = 0
+
+   function cadastrar(){
+      let filme = inp_filme.value;
+      listaFilme.push(filme);
+      
+      if(contador % 2 == 0){
+         div_mensagem.innerHTML += `<spam style="color: blue;" >${listaFilme[contador]}</spam><br>`
+      } else[
+         div_mensagem.innerHTML += `<spam style="color: red;" >${listaFilme[contador]}</spam><br>`
+      ]
+      contador += 1
+   }
+
+</script>

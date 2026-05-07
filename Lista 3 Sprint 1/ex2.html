@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>exercicio2</title>
+</head>
+<body>
+   Quanto você quer depositar/retirar ? <input type="text" id="inp_valor"> <br><br>
+
+   <button onclick="but_dep()">Depositar</button>
+   <button onclick="but_ret()">Retirar</button>
+
+   <div id="msg"></div>
+
+   <script>
+      let saldoAtual = 0;
+
+
+      function but_ret() {
+         let valor = Number(inp_valor.value);
+
+         saldoAtual -= valor;
+
+         msg.innerHTML = `Retirada de R$${valor} efetuada! <br><br> Saldo atual: R$${saldoAtual}`;
+      };
+
+      function but_dep() {
+         let valor = Number(inp_valor.value);
+
+         saldoAtual += valor;
+
+         msg.innerHTML = `Depósito de R$${valor} efetuado! <br><br> Saldo atual: R$${saldoAtual}`;
+      };
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11</title>
+</head>
+
+<body>
+
+    <input type="text" id="inp_numVolta"> Quantas voltas você deu? <br><br>
+    <input type="text" id="inp_tempoTotal"> Qual foi seu tempo de corrida?(em minutos) <br><br>
+    <button onclick="butt_fimCorrida()"> FINALIZAR CORRIDA </button>
+    
+    <div id="exibirVolta"></div>
+    <div id="exibirTempo"></div>
+
+
+</body>
+    <script>
+        function butt_fimCorrida(){
+            exibirVolta.innerHTML = 'Você completou a corrida em ' + inp_numVolta.value + ' voltas!' 
+            exibirTempo.innerHTML = 'O tempo total da corrida foi de ' + inp_tempoTotal.value + " minutos!"
+        };
+        
+    </script>
+</html>

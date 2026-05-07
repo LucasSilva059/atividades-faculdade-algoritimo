@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    N1: <input type="text" id="inp_n1"><br>
+    N2: <input type="text" id="inp_n2"> <br>
+
+    <button onclick="Multiplicar()"> Multiplicar</button>
+    <button onclick="Dividir()"> Dividir</button>
+    <button onclick="Adicionar()"> Adicionar</button>
+    <button onclick="Subtrair()"> Subtrair</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+<script>
+    function Multiplicar() {
+        div_mensagem.innerHTML = `O resultado da multiplicação é: ${Number(inp_n1.value) * Number(inp_n2.value)}`
+    };
+    // div_mensagem.innerHTML = 'O resultado da multiplicação é: ' + (Number(inp_n1.value) * Number(inp_n2.value))
+    function Dividir() {
+        div_mensagem.innerHTML = `O resultado da divisão é: ${Number(inp_n1.value) / Number(inp_n2.value)}`
+    }; // assim usando a crase é melhor man, ela é cheia das vantagem
+
+    function Adicionar() {
+        div_mensagem.innerHTML = `O resultado da adição é: ${Number(inp_n1.value) + Number(inp_n2.value)}`
+    };
+    function Subtrair() {
+        div_mensagem.innerHTML = `O resultado da subtração é: ${Number(inp_n1.value) - Number(inp_n2.value)}`
+    };
+</script>
+
+</html>

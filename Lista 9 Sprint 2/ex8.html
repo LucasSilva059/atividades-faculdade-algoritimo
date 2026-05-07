@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+<body>
+    <button onclick="sortNota()">notas</button>
+    <button onclick="sortFrequencia()">frequencia</button>
+    <button onclick="verSituacao()">situação</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let nota = ""
+    let frequencia = '' 
+    
+    function sortNota(){
+        let n = Math.random();
+        let intervalo = 10 - 0;
+        let formatado = (n * intervalo + 1).toFixed(2);
+
+        nota = formatado
+    }
+
+    function sortFrequencia(){
+        let n = Math.random();
+        let intervalo = 100 - 0;
+        let formatado = (n * intervalo + 1).toFixed(2);
+
+        frequencia = formatado
+    }
+
+    function verSituacao(){
+        div_mensagem.innerHTML = `<br><br><b>SITUAÇÃO DO ALUNO:</b><br>
+                                ${nota} de média<br>
+                                ${frequencia}% de frequência`
+    }
+</script>

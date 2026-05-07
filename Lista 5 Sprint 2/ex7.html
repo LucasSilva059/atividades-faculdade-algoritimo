@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ex4</title>
+</head>
+<body>
+   Login: <input type="text" id="inp_login"><br>
+   Senha: <input type="text" name="" id="inp_senha"><br>
+   Informação Pessoal: <input type="text" name="" id="inp_infPessoal"><br><br>
+
+   <button onclick="autenticar()">Autenticar</button><br>
+
+   <div id="div_mensagem"></div>
+
+</body>
+<script>
+   let contador = 3;
+   function autenticar(){
+      let login = inp_login.value;
+      let senha = inp_senha.value;
+      let infPessoal = inp_infPessoal.value;
+
+      if(contador <= 0){ // se o contador não é zero
+         div_mensagem.innerHTML = `Usuário BLOQUEADO! Procure seu gerente!`
+      }
+      else{ // se acertar a senha
+         if(login == 'ana' && senha == 'braga' && (infPessoal == '1949' || infPessoal == 'louro josé')){ 
+            
+            div_mensagem.innerHTML = ``
+            div_mensagem.innerHTML += `Usuário autenticado`
+         }
+         else{ // se errar a senha
+            contador = contador - 1
+            
+            if(contador > 0){ 
+            div_mensagem.innerHTML = `Falha na autenticação. <br> `
+            div_mensagem.innerHTML += `Você tem mais ${contador} tentativa(s).<br> ` 
+            }
+            else{
+               div_mensagem.innerHTML = `Usuário BLOQUEADO! Procure seu gerente!`
+            }
+         }
+      }
+
+   }
+</script>
+</html>
+

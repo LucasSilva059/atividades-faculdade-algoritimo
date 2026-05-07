@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ex4</title>
+</head>
+<body>
+   Login: <input type="text" id="inp_login"><br>
+   Senha: <input type="text" name="" id="inp_senha"><br>
+   Informação Pessoal: <input type="text" name="" id="inp_infPessoal"><br><br>
+
+   <button onclick="autenticar()">Autenticar</button><br>
+
+   <div id="div_mensagem"></div>
+
+</body>
+<script>
+   function autenticar(){
+      let login = inp_login.value;
+      let senha = inp_senha.value;
+      let infPessoal = inp_infPessoal.value;
+
+      if(login == 'ana' && senha == 'braga' && (infPessoal == '1949' || infPessoal == 'louro josé')){ // pensei aqui ein, fui genio
+         div_mensagem.innerHTML = `Usuário autenticado`
+      }
+      else{
+         div_mensagem.innerHTML = `Falha na autenticação`
+      };
+   }
+</script>
+</html>

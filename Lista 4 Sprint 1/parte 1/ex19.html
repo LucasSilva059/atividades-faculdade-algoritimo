@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentex19</title>
+</head>
+<body>
+    Quantos chocolates você quer comprar? <input type="text" id="inp_qtdChoco">
+
+    <button onclick="butt_comprar()">Compra</button>
+
+    <div id="mensagem"></div>
+
+    <script>
+        function butt_comprar(){
+            let chocolates = inp_qtdChoco.value
+
+
+            if(chocolates > 12) {
+                let preco = chocolates * 2.50
+
+                mensagem.innerHTML = `O valor da sua compra foi de ${preco}`
+            
+            } else {
+                let preco = chocolates * 3.0
+
+                mensagem.innerHTML = `O valor da sua compra foi de ${preco}`
+            };
+        };
+    </script>
+</body>
+</html>
