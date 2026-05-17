@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sette e Mezzo</title>
+</head>
+
+<body>
+   <button id="btn_jogar" onclick="jogar()">Jogar Sette e Mezzo</button>
+
+   <button id="btn_pedir" style="display: none;" onclick="pedir()">Pedir Carta</button>
+
+   <button id="btn_passar" style="display: none;" onclick="passar()">Pasar a Vez</button>
+
+   <div id="div_mensagem"></div><br><br>
+
+   <button id="btn_tentar" style="display: none;" onclick="tentarNovamente()">Tentar novamente</button>
+</body>
+
+</html>
+
+<script>
+   let baralho = [
+      {
+         nome: 'Ás',
+         naipe: 'Copas ♥️',
+         valor: 1
+      },
+      {
+         nome: 'Ás',
+         naipe: 'Espadas ♠️',
+         valor: 1
+      },
+      {
+         nome: 'Ás',
+         naipe: 'Ouros ♦️',
+         valor: 1
+      },
+      {
+         nome: 'Ás',
+         naipe: 'Paus ♣️',
+         valor: 1
+      },
+
+      {
+         nome: '2',
+         naipe: 'Copas ♥️',
+         valor: 2
+      },
+      {
+         nome: '2',
+         naipe: 'Espadas ♠️',
+         valor: 2
+      },
+      {
+         nome: '2',
+         naipe: 'Ouros ♦️',
+         valor: 2
+      },
+      {
+         nome: '2',
+         naipe: 'Paus ♣️',
+         valor: 2
+      },
+
+      {
+         nome: '3',
+         naipe: 'Copas ♥️',
+         valor: 3
+      },
+      {
+         nome: '3',
+         naipe: 'Espadas ♠️',
+         valor: 3
+      },
+      {
+         nome: '3',
+         naipe: 'Ouros ♦️',
+         valor: 3
+      },
+      {
+         nome: '3',
+         naipe: 'Paus ♣️',
+         valor: 3
+      },
+
+      {
+         nome: '4',
+         naipe: 'Copas ♥️',
+         valor: 4
+      },
+      {
+         nome: '4',
+         naipe: 'Espadas ♠️',
+         valor: 4
+      },
+      {
+         nome: '4',
+         naipe: 'Ouros ♦️',
+         valor: 4
+      },
+      {
+         nome: '4',
+         naipe: 'Paus ♣️',
+         valor: 4
+      },
+
+      {
+         nome: '5',
+         naipe: 'Copas ♥️',
+         valor: 5
+      },
+      {
+         nome: '5',
+         naipe: 'Espadas ♠️',
+         valor: 5
+      },
+      {
+         nome: '5',
+         naipe: 'Ouros ♦️',
+         valor: 5
+      },
+      {
+         nome: '5',
+         naipe: 'Paus ♣️',
+         valor: 5
+      },
+
+      {
+         nome: '6',
+         naipe: 'Copas ♥️',
+         valor: 6
+      },
+      {
+         nome: '6',
+         naipe: 'Espadas ♠️',
+         valor: 6
+      },
+      {
+         nome: '6',
+         naipe: 'Ouros ♦️',
+         valor: 6
+      },
+      {
+         nome: '6',
+         naipe: 'Paus ♣️',
+         valor: 6
+      },
+
+      {
+         nome: '7',
+         naipe: 'Copas ♥️',
+         valor: 7
+      },
+      {
+         nome: '7',
+         naipe: 'Espadas ♠️',
+         valor: 7
+      },
+      {
+         nome: '7',
+         naipe: 'Ouros ♦️',
+         valor: 7
+      },
+      {
+         nome: '7',
+         naipe: 'Paus ♣️',
+         valor: 7
+      },
+
+      {
+         nome: 'Valete',
+         naipe: 'Copas ♥️',
+         valor: 0.5
+      },
+      {
+         nome: 'Valete',
+         naipe: 'Espadas ♠️',
+         valor: 0.5
+      },
+      {
+         nome: 'Valete',
+         naipe: 'Ouros ♦️',
+         valor: 0.5
+      },
+      {
+         nome: 'Valete',
+         naipe: 'Paus ♣️',
+         valor: 0.5
+      },
+
+      {
+         nome: 'Dama',
+         naipe: 'Copas ♥️',
+         valor: 0.5
+      },
+      {
+         nome: 'Dama',
+         naipe: 'Espadas ♠️',
+         valor: 0.5
+      },
+      {
+         nome: 'Dama',
+         naipe: 'Ouros ♦️',
+         valor: 0.5
+      },
+      {
+         nome: 'Dama',
+         naipe: 'Paus ♣️',
+         valor: 0.5
+      },
+
+      {
+         nome: 'Rei',
+         naipe: 'Copas ♥️',
+         valor: 0.5
+      },
+      {
+         nome: 'Rei',
+         naipe: 'Espadas ♠️',
+         valor: 0.5
+      },
+      {
+         nome: 'Rei',
+         naipe: 'Ouros ♦️',
+         valor: 0.5
+      },
+      {
+         nome: 'Rei',
+         naipe: 'Paus ♣️',
+         valor: 0.5
+      },
+   ]
+
+   let jogador = 0;
+   let banca = 0;
+
+   function jogar() {
+      btn_pedir.disabled = false;
+      btn_passar.disabled = false;
+
+      document.getElementById('btn_jogar').style.display = "none";
+      document.getElementById('btn_pedir').style.display = "block";
+      document.getElementById('btn_passar').style.display = "block";
+
+
+      let nCarta = Number((Math.random() * 39).toFixed(0));
+      let cartaSorteada = baralho[nCarta];
+
+      console.log('Jogador:')
+      console.log(`carta ${cartaSorteada.nome} de ${cartaSorteada.naipe}`);
+
+      jogador += cartaSorteada.valor;
+
+      div_mensagem.innerHTML = `
+      <br><b>JOGADOR:</b><br>
+
+      (${jogador} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe}  
+      `
+   }
+
+   function pedir() {
+
+      let nCarta = Number((Math.random() * 39).toFixed(0));
+      let cartaSorteada = baralho[nCarta];
+
+      console.log(`carta ${cartaSorteada.nome} de ${cartaSorteada.naipe}`);
+
+      jogador += cartaSorteada.valor;
+
+      if (jogador < 7.5) {
+         div_mensagem.innerHTML += `
+         <br><br>Quero mais uma carta!<br>
+
+         (${jogador} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe}  `
+      }
+      else {
+         if (jogador == 7.5) {
+            div_mensagem.innerHTML += `
+            <br><br>SETE E MEIO! O jogador venceu com 7.5 pontos!<br>
+
+            (${jogador} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe} `
+            btn_pedir.disabled = true;
+            btn_passar.disabled = true;
+            document.getElementById('btn_tentar').style.display = "block";
+         }
+         else {
+            div_mensagem.innerHTML += `
+            <br><br>O JOGADOR ESTOUROU! A banca venceu com ${banca} pontos<br>
+
+            (${jogador} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe} `
+            btn_pedir.disabled = true;
+            btn_passar.disabled = true;
+            document.getElementById('btn_tentar').style.display = "block";
+         }
+      }
+
+   }
+
+   function passar() {
+
+      btn_pedir.disabled = true;
+      btn_passar.disabled = true;
+
+      div_mensagem.innerHTML += "<br><br><b>BANCA</b>"
+
+      while (banca <= jogador) {
+         let nCarta = Number((Math.random() * 39).toFixed(0));
+         let cartaSorteada = baralho[nCarta];
+
+         console.log('Banca:')
+         console.log(`carta ${cartaSorteada.nome} de ${cartaSorteada.naipe}`);
+
+         banca += cartaSorteada.valor
+
+         if (banca > jogador && banca < 7.5) {
+            div_mensagem.innerHTML += `
+            <br><br>Mais uma carta!<br>
+            (${banca} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe}<br>
+
+            A BANCA VENCEU COM ${banca} PONTOS!`
+         }
+         else if (banca < 7.5) {
+            div_mensagem.innerHTML += `
+            <br><br>Mais uma carta!<br>
+
+            (${banca} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe}  `
+            btn_pedir.disabled = true;
+            btn_passar.disabled = true;
+            document.getElementById('btn_tentar').style.display = "block";
+         }
+         else if (banca == 7.5) {
+            div_mensagem.innerHTML += `<br><br>
+            Mais uma carta!<br>
+            (${banca} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe}<br>
+
+            SETE E MEIO! A banca venceu com 7.5 pontos!`
+            btn_pedir.disabled = true;
+            btn_passar.disabled = true;
+            document.getElementById('btn_tentar').style.display = "block";
+         }
+         else if (banca > 7.5) {
+            div_mensagem.innerHTML += `
+            <br><br>Mais uma carta!<br>
+            (${banca} pontos) - ${cartaSorteada.nome} de ${cartaSorteada.naipe}<br>
+
+            A BANCA ESTOUROU! O jogador venceu com ${jogador} pontos!`
+            btn_pedir.disabled = true;
+            btn_passar.disabled = true;
+            document.getElementById('btn_tentar').style.display = "block";
+         }
+      }
+
+   }
+
+   function tentarNovamente() {
+      jogador = 0;
+      banca = 0;
+
+      document.getElementById('btn_jogar').style.display = "block";
+      document.getElementById('btn_pedir').style.display = "none";
+      document.getElementById('btn_passar').style.display = "none";
+
+      div_mensagem.innerHTML = '';
+
+      document.getElementById('btn_tentar').style.display = "none";
+   }
+</script>
