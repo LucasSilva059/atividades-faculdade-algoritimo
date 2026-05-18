@@ -254,6 +254,11 @@
 
       jogador += cartaSorteada.valor;
 
+      baralho.splice(nCarta,1);  
+
+      console.log(baralho);
+
+
       div_mensagem.innerHTML = `
       <br><b>JOGADOR:</b><br>
 
@@ -263,12 +268,16 @@
 
    function pedir() {
 
-      let nCarta = Number((Math.random() * 39).toFixed(0));
+      let nCarta = Number((Math.random() * 38).toFixed(0));
       let cartaSorteada = baralho[nCarta];
 
       console.log(`carta ${cartaSorteada.nome} de ${cartaSorteada.naipe}`);
 
       jogador += cartaSorteada.valor;
+
+      baralho.splice(nCarta,1);
+      console.log(baralho);  
+      nCarta --;
 
       if (jogador < 7.5) {
          div_mensagem.innerHTML += `
@@ -314,6 +323,10 @@
          console.log(`carta ${cartaSorteada.nome} de ${cartaSorteada.naipe}`);
 
          banca += cartaSorteada.valor
+         baralho.splice(nCarta,1);  
+         console.log(baralho);
+         nCarta --;
+
 
          if (banca > jogador && banca < 7.5) {
             div_mensagem.innerHTML += `
